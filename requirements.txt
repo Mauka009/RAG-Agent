@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+langchain
+langchain-community
+langchain-text-splitters
+langchain-huggingface
+requests
+sentence-transformers
+rank-bm25
+jieba
+gradio
+openai
+faiss-cpu
+numpy
