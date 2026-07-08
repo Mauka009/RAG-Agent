@@ -4,3 +4,4 @@ rag_env/
 __pycache__/
 *.pyc
 .DS_Store
+hf_cache/
