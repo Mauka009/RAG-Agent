@@ -32,7 +32,7 @@ from sentence_transformers import CrossEncoder
 # LangChain 相关
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document   # 用于构造临时文档
 from langchain_community.document_loaders import UnstructuredWordDocumentLoader, UnstructuredExcelLoader
@@ -103,7 +103,7 @@ def smart_loader(file_path):
         import docx
         doc = docx.Document(file_path)
         text = "\n".join([p.text for p in doc.paragraphs if p.text.strip()])
-        return [Document(page_content=text, metadata={"source": file_path, "parser": "fallback"})]
+        return [Document(page_content=text, metadata={"source": file_path})]
     else:
         raise ValueError(f"❌ 不支持的文件格式: {ext}")
 
