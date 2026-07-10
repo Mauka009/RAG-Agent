@@ -192,7 +192,7 @@ reranker = CrossEncoder(RERANK_MODEL)
 print("✅ Rerank模型加载完成")
 
 # ---------- 8. 核心检索函数：混合检索 + Rerank ----------
-def hybrid_search_with_rerank(query, top_k=3, use_bm25=True, use_rerank=True, alpha=0.5):
+def hybrid_search_with_rerank(query, top_k=3, use_bm25=True, use_rerank=True, alpha=0.6):
     """
     输入问题，返回最相关的 top_k 个文档块(Document 对象列表）
     - use_bm25: True 使用 BM25 混合；False 只用 FAISS
